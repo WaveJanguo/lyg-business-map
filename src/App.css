@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #2c85ff 0%, #1a5fff 100%);
+  color: white;
+  padding: 16px 24px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.controls {
+  background: white;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 240px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #2c85ff;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.business-list {
+  width: 360px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee;
+}
+
+.list-header {
+  padding: 12px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #666;
+}
+
+.list-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.list-item {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.list-item:hover {
+  background: #f8f8f8;
+}
+
+.list-item.active {
+  background: #e8f0fe;
+  border-left: 3px solid #2c85ff;
+}
+
+.list-item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.list-item .meta {
+  margin-bottom: 6px;
+}
+
+.list-item .tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #eef2ff;
+  color: #2c85ff;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.list-item .address {
+  font-size: 13px;
+  color: #666;
+}
+
+.empty {
+  padding: 40px 16px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+.popup h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.popup p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.popup button {
+  background: #2c85ff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #1a5fff;
+}
+
+.footer {
+  background: white;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  border-top: 1px solid #eee;
+}
+
+/* 响应式适配手机 */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .business-list {
+    width: 100%;
+    height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filters select {
+    flex: 1;
+  }
+}
